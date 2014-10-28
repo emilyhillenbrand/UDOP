@@ -1,12 +1,25 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+
     <groupId>com.bcmcgroup</groupId>
     <artifactId>opstempo</artifactId>
     <packaging>war</packaging>
     <version>1.0</version>
-    <name>opstempo Maven Webapp</name>
-    <url>http://maven.apache.org</url>
+
+    <name>Ops Tempo Widget</name>
+    <description> A calendar widget developed for the Ozone Widget Framework </description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- Local database properties -->
+        <db.local.username>root</db.local.username>
+
+        <!-- Remote database properties -->
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -14,8 +27,27 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.12</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
+
+
     <build>
         <finalName>opstempo</finalName>
+        <filters>
+            <filter>src/main/filters/filter.properties</filter>
+        </filters>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
+
+
 </project>

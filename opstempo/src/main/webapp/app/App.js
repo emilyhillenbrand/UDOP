@@ -87,7 +87,7 @@ Ext.define('Ext.calendar.App', {
                     border: false,
                     id:'app-calendar',
                     region: 'center',
-                    activeItem: 3, // month view
+                    activeItem: 2, // week view
                     
                     monthViewCfg: {
                         showHeader: true,
