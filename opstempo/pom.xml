@@ -38,6 +38,8 @@
             <artifactId>spring-beans</artifactId>
             <version>4.1.1.RELEASE</version>
         </dependency>
+
+        <!-- Spring MVC support (ie RequestMapping) -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
@@ -48,17 +50,14 @@
             <artifactId>spring-webmvc</artifactId>
             <version>4.1.1.RELEASE</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-jdbc</artifactId>
-            <version>4.1.1.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
-            <version>4.1.1.RELEASE</version>
-        </dependency>
 
+
+        <!-- JSON support (Jackson) dependencies -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.2.3</version>
+        </dependency>
 
 
         <!-- Hibernate support -->
@@ -73,7 +72,7 @@
             <version>4.2.0.Final</version>
         </dependency>
 
-        <!-- Support Hibernate annotations -->
+        <!-- Hibernate annotations -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-annotations</artifactId>
@@ -86,6 +85,24 @@
             <classifier>tests</classifier>
         </dependency>
 
+        <!-- Spring database dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-tx</artifactId>
+            <version>4.1.1.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>4.1.1.RELEASE</version>
+        </dependency>
+        <!--
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-jdbc</artifactId>
+            <version>4.1.1.RELEASE</version>
+        </dependency>
+        -->
 
         <!-- MYSQL database driver -->
         <dependency>
@@ -95,11 +112,13 @@
         </dependency>
 
         <!-- Servlet support -->
+        <!--
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.1.0</version>
         </dependency>
+        -->
 
         <!-- Logging -->
         <dependency>
@@ -123,6 +142,7 @@
         <finalName>opstempo</finalName>
         <filters>
             <filter>src/main/filters/filter.properties</filter>
+            <filter>src/main/resources/database.properties</filter>
         </filters>
         <resources>
             <resource>

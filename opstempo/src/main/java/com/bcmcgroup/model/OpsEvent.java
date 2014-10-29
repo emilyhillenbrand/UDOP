@@ -1,5 +1,7 @@
 package com.bcmcgroup.model;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -7,6 +9,7 @@ import java.util.Date;
 /**
  * Created by emilyhillenbrand on 10/29/14.
  */
+@JsonAutoDetect
 @Entity
 @Table(name = "EVENTS")
 public class OpsEvent implements Serializable {
@@ -55,5 +58,10 @@ public class OpsEvent implements Serializable {
 
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Event: " + getEventId() + ", " + getTitle() + ", " + getStartDate() + " - " + getEndDate();
     }
 }
