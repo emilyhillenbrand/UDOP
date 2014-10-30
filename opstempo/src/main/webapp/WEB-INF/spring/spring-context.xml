@@ -15,9 +15,9 @@
 
     <context:component-scan base-package="com.bcmcgroup"/>
 
-    <tx:annotation-driven/>
 
 
-    <!-- <mvc:resources location="/extjs/**" mapping="/resources/extjs"/> -->
+
+    <!--<mvc:resources location="/extjs/**" mapping="/resources/extjs"/>-->
 
 </beans:beans>
